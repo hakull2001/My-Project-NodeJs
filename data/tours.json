@@ -1,0 +1,28 @@
+[
+    {
+        "name" : "Du lịch Hawai",
+        "rating": 5,
+        "price" : 1200,
+        "summary" : "Hãy tận hưởng cuộc sống của bạn",
+        "description" : "Nơi đây dược mệnh danh là khu du dịch bật nhất thế giới",
+        "imageCover" : "tour-9-cover.jpg",
+        "images" : ["1.jpg", "2.jpg", "3.jpg"],
+        "startDates":["2021-12-16"],
+        "maxGroupSize":100,
+        "difficulty" : "Rất vui",
+        "durations" : 100
+    },
+    {
+        "name" : "Du lịch Hạ Long",
+        "rating": 5,
+        "price" : 20000,
+        "summary" : "Hãy tận hưởng cuộc sống của bạn ở quê tôi",
+        "description" : "Nơi đây dược mệnh danh là khu du dịch và có kỳ quan thiên nhiên đẹp bật nhất thế giới",
+        "imageCover" : "tour-1-cover.jpg",
+        "images" : ["1.jpg", "2.jpg", "3.jpg"],
+        "startDates":["2021-12-16"],
+        "maxGroupSize":100,
+        "difficulty" : "Rất vui",
+        "durations" : 100
+    }
+]
