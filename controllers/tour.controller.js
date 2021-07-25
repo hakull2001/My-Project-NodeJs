@@ -1,55 +1,70 @@
-const { findByIdAndDelete } = require("../models/Tours");
 const Tours = require("../models/Tours");
-
+const asyncHandle = require("../middleware/asyncHandle");
+const { msgEnum } = require("../enum/message.enum");
+const { codeEnum } = require("../enum/statusCode.enum");
+const ErrorResponse = require("../common/errorResponse");
 module.exports = {
-    getTour: async (req, res, next) => {
+    getTour: asyncHandle(async (req, res, next) => {
         const tour = await Tours.findById(req.params.id);
         if (!tour) {
-            return new Error("Chuyến đi không tồn tại");
+            return next(new ErrorResponse(msgEnum.TOUR_NOT_FOUND, codeEnum.NOT_FOUND));
         }
-        res.status(200).json({
-            status: "success",
-            data : tour
-        })
-    },
-    getAllTours: async (req, res, next) => {
+        res.status(codeEnum.SUCCESS).json(tour);
+    }),
+    getAllTours: asyncHandle(async (req, res, next) => {
         const tour = await Tours.find({});
-        res.status(200).json({
-            status: "success",
+        res.status(codeEnum.SUCCESS).json({
+            msg: "success",
             data: {
                 tour
             },
         });
-    },
-    createTour: async (req, res, next) => {
-        const { name, rating, price } = req.body;
+    }),
+    createTour: asyncHandle(async (req, res, next) => {
+        const {
+            name,
+            rating,
+            price,
+            durations,
+            maxGroupSize,
+            difficulty,
+            description,
+            imageCover
+        } = req.body;
         const tour = await Tours.create({
-            name, rating, price
+            name,
+            rating,
+            price,
+            durations,
+            maxGroupSize,
+            difficulty,
+            description,
+            imageCover
         });
-        res.status(201).json({
-            status: "success",
+        res.status(codeEnum.CREATED).json({
+            msg: msgEnum.ADD_SUCCESS,
             data: tour
         });
-    },
-    updateTour: async (req, res, next) => {
+    }),
+    updateTour: asyncHandle(async (req, res, next) => {
         const tour = await Tours.findByIdAndUpdate(req.params.id, req.body, {
             new: true,
             runValidators: true
         });
         if (!tour) {
-            return new Error("Không tìm thấy chuyến đi")
+            return next(new ErrorResponse(msgEnum.TOUR_NOT_FOUND, codeEnum.NOT_FOUND));
         }
-        res.status(200).json({
-            status : "Cập nhật chuyến đi thành công"
+        res.status(codeEnum.SUCCESS).json({
+            msg : msgEnum.UPDATE_SUCCESS
         })
-    },
-    deleteTour: async (req, res, next) => {
+    }),
+    deleteTour: asyncHandle(async(req, res, next) => {
         const tour = await Tours.findByIdAndDelete(req.params.id);
         if (!tour) {
-            return new Error(`Không tìm thấy chuyến đi có Id ${id}`);
+            return next(new ErrorResponse(msgEnum.TOUR_NOT_FOUND, codeEnum.NOT_FOUND));
         }
-        res.status(200).json({
-            status: "Xóa thành công"
+        res.status(codeEnum.SUCCESS).json({
+            msg: msgEnum.DELETE_SUCCESS
         });
-    }
+    }),
 }
