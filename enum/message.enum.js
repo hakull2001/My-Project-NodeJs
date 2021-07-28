@@ -29,5 +29,8 @@ exports.msgEnum = {
   INVALID_PASSWORD: "Vui lòng nhập mật khẩu mới",
   INVALID_OLD_PASSWORD: "Vui lòng nhập mật khẩu cũ",
   TOUR_NOT_FOUND: "Không tìm thấy chuyến đi này",
-  ACCOUNT_NOT_FOUND : "Email hoặc mật khẩu không hợp lệ"
+  ACCOUNT_NOT_FOUND: "Email hoặc mật khẩu không hợp lệ",
+  ACCESS_PROCESS_FAIL: "Mật khẩu người dùng đã được thay đổi, vui lòng đăng nhập lại !",
+  EMAIL_INVALID: "Email bạn vừa nhập chưa đăng ký tài khoản",
+  TOKEN_INVALID_OR_EXPIRES : "Token không hợp lệ hoặc đã hết hạn"
 }

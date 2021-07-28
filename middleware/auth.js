@@ -18,16 +18,16 @@ module.exports = {
         if (!token) {
              return next(new ErrorResponse(msgEnum.TOKEN_INVALID, codeEnum.UNAUTHORIZED));
         }
-        try {
-            const decoded = await jwt.verify(token, process.env.JWT_SECRET);
-            const user = await User.findById(decoded.id);
-            if (!user) {
-                 return next(new ErrorResponse(msgEnum.TOKEN_INVALID, codeEnum.UNAUTHORIZED));}
-            req.user = user;
-            next();
-    }   catch (error) {
+        const decoded = await promisify(jwt.verify)(token, process.env.JWT_SECRET);
+        const user = await User.findById(decoded.id);
+        if (!user) {
             return next(new ErrorResponse(msgEnum.TOKEN_INVALID, codeEnum.UNAUTHORIZED));
-    }
+        }
+        if (user.passwordChangedAfter(decoded.iat)) {
+            return next(new ErrorResponse(msgEnum.ACCESS_PROCESS_FAIL, codeEnum.UNAUTHORIZED));
+        }
+        req.user = user;
+        next();
   }),
     veryRefreshToken: asyncHandle(async (req, res, next) => {
         const { refreshToken } = req.body;
