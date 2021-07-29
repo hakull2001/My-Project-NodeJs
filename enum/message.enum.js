@@ -32,5 +32,6 @@ exports.msgEnum = {
   ACCOUNT_NOT_FOUND: "Email hoặc mật khẩu không hợp lệ",
   ACCESS_PROCESS_FAIL: "Mật khẩu người dùng đã được thay đổi, vui lòng đăng nhập lại !",
   EMAIL_INVALID: "Email bạn vừa nhập chưa đăng ký tài khoản",
-  TOKEN_INVALID_OR_EXPIRES : "Token không hợp lệ hoặc đã hết hạn"
+  TOKEN_INVALID_OR_EXPIRES: "Token không hợp lệ hoặc đã hết hạn",
+  DELETE_ACCOUNT_SUCCESS : "Bạn đã xóa tài khoản của bạn thành công"
 }
