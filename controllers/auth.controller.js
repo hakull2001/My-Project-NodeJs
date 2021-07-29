@@ -97,5 +97,53 @@ module.exports = {
         res.status(codeEnum.SUCCESS).json({
             msg: msgEnum.RESET_PASSWORD_SUCCESS
         });
+    }),
+    updatePassword: asyncHandle(async (req, res, next) => {
+        const { newPassword, oldPassword, passwordConfirm } = req.body;
+        if (!oldPassword) {
+            return next(new ErrorResponse(msgEnum.INVALID_OLD_PASSWORD, codeEnum.BAD_REQUEST));
+        }
+        if (!newPassword) {
+            return next(new ErrorResponse(msgEnum.INVALID_PASSWORD, codeEnum.BAD_REQUEST));
+        }
+        const user = await User.findById(req.user.id).select("+password");
+        if (!(await user.matchPassword(oldPassword, user.password))) {
+            return next(new ErrorResponse(msgEnum.CURRENT_PASSWORD_INVALID, codeEnum.UNAUTHORIZED));
+        }
+        user.password = newPassword;
+        user.passwordConfirm = passwordConfirm;
+        await user.save();
+        const token = user.signToken();
+        res.status(codeEnum.SUCCESS).json({
+            token,
+        });
+    }),
+    getMe: asyncHandle(async (req, res, next) => {
+        const user = await User.findById(req.user.id);
+        res.status(codeEnum.SUCCESS).json(user);
+    }),
+    updateDetails: asyncHandle(async (req, res, next) => {
+        const allowFields = {
+            name: req.body.name,
+            photo: req.body.photo,
+        }
+        for (let key in allowFields) {
+            if (!allowFields[key]) {
+                delete allowFields[key];
+            }
+        }
+        const user = await User.findByIdAndUpdate(req.user.id, allowFields, {
+            new: true,
+            runValidators: true
+        });
+        res.status(codeEnum.SUCCESS).json({
+            msg: msgEnum.UPDATE_SUCCESS
+        });
+    }),
+    deleteMe: asyncHandle(async (req, res, next) => {
+        await User.findByIdAndUpdate(req.user.id, { active: false });
+        res.status(codeEnum.SUCCESS).json({
+            msg: msgEnum.DELETE_ACCOUNT_SUCCESS
+        });
     })
 }

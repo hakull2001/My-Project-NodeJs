@@ -23,7 +23,7 @@ module.exports = {
         if (!user) {
             return next(new ErrorResponse(msgEnum.TOKEN_INVALID, codeEnum.UNAUTHORIZED));
         }
-        if (user.passwordChangedAfter(decoded.iat)) {
+        if (user.changedPasswordAfter(decoded.iat)) {
             return next(new ErrorResponse(msgEnum.ACCESS_PROCESS_FAIL, codeEnum.UNAUTHORIZED));
         }
         req.user = user;
