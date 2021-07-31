@@ -4,7 +4,7 @@ class ApiFeatures{
         this.queryString = queryString;
     }
     filter() {
-        const queryObj = { ...req.queryString };
+        const queryObj = { ...this.queryString };
         const excludedFields = ['page', 'sort', 'limit', 'fields'];
         excludedFields.forEach(el => delete queryObj[el]);
 
@@ -15,8 +15,8 @@ class ApiFeatures{
         return this;
     }
     sort() {
-        if (req.query.sort) {
-            const sortBy = this.queryString.sort.split(',').join(' ');
+        if (this.queryString.sort) {
+            const sortBy = this.queryString.sort.split(",").join(" ");
             this.query = this.query.sort(sortBy);
         } else {
             this.query = this.query.sort("-createdAt");
@@ -25,7 +25,7 @@ class ApiFeatures{
         return this;
     }
     fields() {
-        if (req.query.fields) {
+        if (this.queryString.fields) {
             const fields = this.queryString.fields.split(",").join(" ");
             this.query = this.query.select(fields);
         } else {

@@ -105,5 +105,8 @@ UserSchema.pre("save", function (next) {
 UserSchema.pre(/^find/, function (next) {
     this.find({ active: { $ne: false } });
     next();
+}, {
+        toJSON: { virtuals: true },
+        toObject : {vituals : true}
 })
 module.exports = mongoose.model("users", UserSchema);

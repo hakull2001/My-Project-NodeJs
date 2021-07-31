@@ -52,8 +52,8 @@ module.exports = {
             if (!roles.includes(req.user.role)) {
                 return next(new ErrorResponse(msgEnum.NOT_PERMISSION_DELETE, codeEnum.FORBIDDEN));
             }
+            next();
         }
-        next();
     },
     forgotPassword: asyncHandle(async (req, res, next) => {
         const user = await User.findOne({ email: req.body.email });
