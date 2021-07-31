@@ -8,5 +8,12 @@ exports.apiEnum = {
     API_GET_MY_PROFILE: "/auth/my-profile",
     API_UPDATE_PROFILE: "/auth/update-details",
     API_DELETE_ME: "/auth/delete-me",
-    API_GET_ALL_USERS : "/auth/users"
+    API_GET_ALL_USERS: "/users",
+    API_GET_REVIEW: "/reviews/:id",
+    API_GET_ALL_REVIEWS: "/reviews",
+    API_CREATE_REVIEWS: "/reviews",
+    API_CREATE_REVIEWS_INSIDE_ROUTER: "/tours/:tourId/reviews",
+    API_TOUR: "/auth/tours/:id",
+    API_CREATE_TOUR: "/auth/tours",
+    API_GET_USER : "/users/:id",
 }
