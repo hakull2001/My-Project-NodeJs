@@ -1,6 +1,6 @@
 [
     {
-        "name" : "Du lịch Hawai",
+        "name" : "Du lịch Hawaiiiii 1234",
         "rating": 5,
         "price" : 1200,
         "summary" : "Hãy tận hưởng cuộc sống của bạn",
@@ -12,17 +12,190 @@
         "difficulty" : "Rất vui",
         "durations" : 100
     },
-    {
-        "name" : "Du lịch Hạ Long",
-        "rating": 5,
-        "price" : 20000,
-        "summary" : "Hãy tận hưởng cuộc sống của bạn ở quê tôi",
-        "description" : "Nơi đây dược mệnh danh là khu du dịch và có kỳ quan thiên nhiên đẹp bật nhất thế giới",
-        "imageCover" : "tour-1-cover.jpg",
-        "images" : ["1.jpg", "2.jpg", "3.jpg"],
-        "startDates":["2021-12-16"],
-        "maxGroupSize":100,
-        "difficulty" : "Rất vui",
-        "durations" : 100
-    }
+  
+        {
+            "rating": 5,
+            "image": [],
+            "startDates": [],
+            "guides": [
+                {
+                    "role": "user",
+                    "_id": "60fcd710ac0ffe216cf07091",
+                    "name": "Le Van Ha",
+                    "email": "birtday11111@gmail.com"
+                },
+                {
+                    "role": "user",
+                    "_id": "60ffea858baf2f3bfc4def54",
+                    "name": "Le Van Ha",
+                    "email": "birtday@gmail.com"
+                }
+            ],
+            "_id": "6103ba996bd3773d04be32a1",
+            "name": "Du lịch Hạ Long nef",
+            "price": 20000,
+            "durations": 100,
+            "maxGroupSize": 100,
+            "difficulty": "Rất vui",
+            "description": "Nơi đây dược mệnh danh là khu du dịch và có kỳ quan thiên nhiên đẹp bật nhất thế giới",
+            "imageCover": "tour-1-cover.jpg",
+            "slug": "du-lich-ha-long-nef",
+            "id": "6103ba996bd3773d04be32a1"
+        },
+        {
+            "rating": 5,
+            "image": [],
+            "startDates": [],
+            "guides": [
+                {
+                    "role": "user",
+                    "_id": "60fcd710ac0ffe216cf07091",
+                    "name": "Le Van Ha",
+                    "email": "birtday11111@gmail.com"
+                },
+                {
+                    "role": "user",
+                    "_id": "60ffea858baf2f3bfc4def54",
+                    "name": "Le Van Ha",
+                    "email": "birtday@gmail.com"
+                }
+            ],
+            "_id": "6103b95b8d1acb17e8e0854d",
+            "name": "Du lịch Hạ Long lan cuoi cung nhaaaaa",
+            "price": 20000,
+            "durations": 100,
+            "maxGroupSize": 100,
+            "difficulty": "Rất vui",
+            "description": "Nơi đây dược mệnh danh là khu du dịch và có kỳ quan thiên nhiên đẹp bật nhất thế giới",
+            "imageCover": "tour-1-cover.jpg",
+            "slug": "du-lich-ha-long-lan-cuoi-cung-nhaaaaa",
+            "id": "6103b95b8d1acb17e8e0854d"
+        },
+        {
+            "rating": 5,
+            "image": [],
+            "startDates": [],
+            "guides": [],
+            "_id": "6103b4b2ad86eb28c421144f",
+            "name": "Du lịch Hạ Long lan cuoi cung nha 2",
+            "price": 20000,
+            "durations": 100,
+            "maxGroupSize": 100,
+            "difficulty": "Rất vui",
+            "description": "Nơi đây dược mệnh danh là khu du dịch và có kỳ quan thiên nhiên đẹp bật nhất thế giới",
+            "imageCover": "tour-1-cover.jpg",
+            "slug": "du-lich-ha-long-lan-cuoi-cung-nha-2",
+            "id": "6103b4b2ad86eb28c421144f"
+        },
+        {
+            "rating": 5,
+            "image": [],
+            "startDates": [],
+            "guides": [
+                {
+                    "role": "user",
+                    "_id": "60fcd710ac0ffe216cf07091",
+                    "name": "Le Van Ha",
+                    "email": "birtday11111@gmail.com"
+                },
+                {
+                    "role": "user",
+                    "_id": "60ffea858baf2f3bfc4def54",
+                    "name": "Le Van Ha",
+                    "email": "birtday@gmail.com"
+                }
+            ],
+            "_id": "6103b4890bffb61a10d62611",
+            "name": "Du lịch Hạ Long lan cuoi cung nha 1",
+            "price": 20000,
+            "durations": 100,
+            "maxGroupSize": 100,
+            "difficulty": "Rất vui",
+            "description": "Nơi đây dược mệnh danh là khu du dịch và có kỳ quan thiên nhiên đẹp bật nhất thế giới",
+            "imageCover": "tour-1-cover.jpg",
+            "slug": "du-lich-ha-long-lan-cuoi-cung-nha-1",
+            "id": "6103b4890bffb61a10d62611"
+        },
+        {
+            "rating": 5,
+            "image": [],
+            "startDates": [],
+            "guides": [],
+            "_id": "6103b3564e31900b38d76d2b",
+            "name": "Du lịch Hạ Long lan cuoi cung nha",
+            "price": 20000,
+            "durations": 100,
+            "maxGroupSize": 100,
+            "difficulty": "Rất vui",
+            "description": "Nơi đây dược mệnh danh là khu du dịch và có kỳ quan thiên nhiên đẹp bật nhất thế giới",
+            "imageCover": "tour-1-cover.jpg",
+            "slug": "du-lich-ha-long-lan-cuoi-cung-nha",
+            "id": "6103b3564e31900b38d76d2b"
+        },
+        {
+            "rating": 5,
+            "image": [],
+            "startDates": [],
+            "guides": [],
+            "_id": "6103b306fa4df304c0f7ec61",
+            "name": "Du lịch Hạ Long lan 4",
+            "price": 20000,
+            "durations": 100,
+            "maxGroupSize": 100,
+            "difficulty": "Rất vui",
+            "description": "Nơi đây dược mệnh danh là khu du dịch và có kỳ quan thiên nhiên đẹp bật nhất thế giới",
+            "imageCover": "tour-1-cover.jpg",
+            "slug": "du-lich-ha-long-lan-4",
+            "id": "6103b306fa4df304c0f7ec61"
+        },
+        {
+            "rating": 5,
+            "image": [],
+            "startDates": [],
+            "guides": [],
+            "_id": "6103b26ed67ebb306047012e",
+            "name": "Du lịch Hạ Long lan 3",
+            "price": 20000,
+            "durations": 100,
+            "maxGroupSize": 100,
+            "difficulty": "Rất vui",
+            "description": "Nơi đây dược mệnh danh là khu du dịch và có kỳ quan thiên nhiên đẹp bật nhất thế giới",
+            "imageCover": "tour-1-cover.jpg",
+            "slug": "du-lich-ha-long-lan-3",
+            "id": "6103b26ed67ebb306047012e"
+        },
+        {
+            "rating": 5,
+            "image": [],
+            "startDates": [],
+            "guides": [],
+            "_id": "6103b1fbd2080f306cc31472",
+            "name": "Du lịch Hạ Long lan 2",
+            "price": 20000,
+            "durations": 100,
+            "maxGroupSize": 100,
+            "difficulty": "Rất vui",
+            "description": "Nơi đây dược mệnh danh là khu du dịch và có kỳ quan thiên nhiên đẹp bật nhất thế giới",
+            "imageCover": "tour-1-cover.jpg",
+            "slug": "du-lich-ha-long-lan-2",
+            "id": "6103b1fbd2080f306cc31472"
+        },
+        {
+            "rating": 5,
+            "image": [],
+            "startDates": [
+                "2021-12-16T00:00:00.000Z"
+            ],
+            "guides": [],
+            "_id": "60fb92b3338f0f48109693c8",
+            "name": "Du lịch Hawai lần 2",
+            "price": 1200,
+            "durations": 100,
+            "maxGroupSize": 100,
+            "difficulty": "Rất vui",
+            "description": "Nơi đây dược mệnh danh là khu du dịch bật nhất thế giới",
+            "imageCover": "tour-9-cover.jpg",
+            "slug": "du-lich-hawai-lan-2",
+            "id": "60fb92b3338f0f48109693c8"
+        }
 ]

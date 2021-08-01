@@ -14,7 +14,7 @@ Router
         reviewController.createReview
     );
 Router
-    .route("/reviews/:id")
+    .route("/:id")
     .get(reviewController.getReview)
     .put(
         authController.restrictTo("user", "admin"),

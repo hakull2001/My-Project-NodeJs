@@ -3,7 +3,7 @@ const authMiddleware = require("../middleware/auth");
 const authController = require("../controllers/auth.controller");
 const router = require("express").Router();
 const { apiEnum } = require("../enum/api.enum");
-router.use(authController.restrictTo("admin"));
+router.use(authMiddleware.protect);
 router
     .route(apiEnum.API_GET_ALL_USERS)
     .get(userController.getAllUsers)

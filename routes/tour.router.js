@@ -6,7 +6,15 @@ const reviewRouter = require("./review.router");
 const { apiEnum } = require("../enum/api.enum");
 router
     .route(apiEnum.API_TOUR)
-    .get(TourController.getTour)
+    .get(
+        authMiddleware.protect,
+        TourController.getTour
+    )
+    .delete(
+        authMiddleware.protect,
+        authController.restrictTo("admin", "lead-guide"),
+        TourController.deleteTour
+    );
 router
     .route("/auth/tours")
     .get(authMiddleware.protect, TourController.getAllTours)
