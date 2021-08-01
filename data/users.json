@@ -1,0 +1,18 @@
+[ {
+            "role": "user",
+            "_id": "60fcd710ac0ffe216cf07091",
+            "name": "Le Van Ha",
+            "email": "birtday11111@gmail.com",
+            "password": "$2a$12$oJrUbHqe0r0WNpA.MT6m..jDgZwfKBUyHqyRh1Q3F3HV9eVJPVqdq",
+            "passwordResetExpires": "2021-07-28T10:51:36.739Z",
+            "passwordResetToken": "1a8bc7266d0a3a5b3c78a104c3d11364c8b763b9a10d009d48530405c8289264"
+        },
+        {
+            "role": "user",
+            "_id": "60ffea858baf2f3bfc4def54",
+            "name": "Le Van Ha",
+            "email": "birtday@gmail.com",
+            "password": "$2a$12$/mVJfa9MpXpMC3GKolFI7e0gqz9vjBQsK0zm5XmxDyXZuXyru7qoK",
+            "passwordResetExpires": "2021-07-28T10:01:12.731Z",
+            "passwordResetToken": "331bcf8cc332c82667d38d0f6f3bc9ec29ac45d4c958d336cca1b619aa78dcb4"
+        }]

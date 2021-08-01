@@ -52,12 +52,12 @@ const UserSchema = new mongoose.Schema({
         select : false
     }
 });
-UserSchema.pre('save', async function (next) {
-    if (!this.isModified("password")) return next();
-    this.password = await bcrypt.hash(this.password, 12);
-    this.passwordConfirm = undefined;
-    next();
-})
+// UserSchema.pre('save', async function (next) {
+//     if (!this.isModified("password")) return next();
+//     this.password = await bcrypt.hash(this.password, 12);
+//     this.passwordConfirm = undefined;
+//     next();
+// })
 UserSchema.methods.signToken = function () {
     return jwt.sign({ id: this._id }, process.env.JWT_SECRET, {
         expiresIn: process.env.JWT_EXPIRES
@@ -96,12 +96,12 @@ UserSchema.methods.createPasswordResetToken = function () {
     this.passwordResetExpires = Date.now() + 10 * 60 * 1000;
     return resetToken;
 }
-UserSchema.pre("save", function (next) {
-    if (!this.isModified('password') || this.isNew)
-        return next();
-    this.passwordChangedAt = Date.now() - 1000;
-    next();
-})
+// UserSchema.pre("save", function (next) {
+//     if (!this.isModified('password') || this.isNew)
+//         return next();
+//     this.passwordChangedAt = Date.now() - 1000;
+//     next();
+// })
 UserSchema.pre(/^find/, function (next) {
     this.find({ active: { $ne: false } });
     next();
