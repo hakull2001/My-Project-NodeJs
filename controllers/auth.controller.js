@@ -123,10 +123,13 @@ module.exports = {
         res.status(codeEnum.SUCCESS).json(user);
     }),
     updateDetails: asyncHandle(async (req, res, next) => {
+        console.log(req.file);
+        console.log(req.body);
         const allowFields = {
             name: req.body.name,
             photo: req.body.photo,
         }
+        if (req.file) allowFields.photo = req.file.filename;
         for (let key in allowFields) {
             if (!allowFields[key]) {
                 delete allowFields[key];

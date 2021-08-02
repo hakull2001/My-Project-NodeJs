@@ -10,6 +10,10 @@ router
         authMiddleware.protect,
         TourController.getTour
     )
+    .put(
+        authMiddleware.protect,
+        authController.restrictTo("admin", "lead-guide"),
+        TourController.updateTour)
     .delete(
         authMiddleware.protect,
         authController.restrictTo("admin", "lead-guide"),

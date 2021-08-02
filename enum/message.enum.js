@@ -24,7 +24,7 @@ exports.msgEnum = {
   WRONG_PASSWORD: "Mật khẩu không đúng",
   CURRENT_PASSWORD_INVALID: "Mật khẩu hiện tại không hợp lệ",
   NEW_PASSWORD_INVALID: "Mật khẩu mới không hợp lệ",
-  NOT_PERMISSION_DELETE: "Không được phép xóa",
+  NOT_PERMISSION_DELETE: "Không được phép thực hiện hành động này",
   FAIL_FORMAT: "Dữ liệu không đúng định dạng",
   INVALID_PASSWORD: "Vui lòng nhập mật khẩu mới",
   INVALID_OLD_PASSWORD: "Vui lòng nhập mật khẩu cũ",
