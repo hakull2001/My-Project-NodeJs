@@ -3,12 +3,11 @@ const reviewController = require("../controllers/review.controller");
 const authController = require("../controllers/auth.controller");
 const { apiEnum } = require("../enum/api.enum");
 const authMiddleware = require("../middleware/auth");
-
+Router.use(authMiddleware.protect);
 Router
     .route("/")
     .get(reviewController.getAllReviews)
     .post(
-        authMiddleware.protect,
         authController.restrictTo("user"),
         reviewController.setTourUserId,
         reviewController.createReview
@@ -17,6 +16,7 @@ Router
     .route("/:id")
     .get(reviewController.getReview)
     .put(
+
         authController.restrictTo("user", "admin"),
         reviewController.updateReview
     )

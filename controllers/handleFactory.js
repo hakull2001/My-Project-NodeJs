@@ -34,7 +34,7 @@ exports.deleteDocument = Model => asyncHandle(async (req, res, next) => {
     if (!doc) {
         return next(new ErrorResponse(msgEnum.DATA_NOT_FOUND, codeEnum.NOT_FOUND));
     }
-    sendResponse(doc, codeEnum.SUCCESS, msgEnum.DELETE_SUCCESS, res);
+    sendResponse(null, codeEnum.SUCCESS, msgEnum.DELETE_SUCCESS, res);
 })
 exports.getDocument = (Model, popOptions) => asyncHandle(async (req, res, next) => {
     let query = Model.findById(req.params.id);
