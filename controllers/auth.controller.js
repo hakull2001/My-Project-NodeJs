@@ -3,6 +3,7 @@ const asyncHandle = require("../middleware/asyncHandle");
 const { msgEnum } = require("../enum/message.enum");
 const { codeEnum } = require("../enum/statusCode.enum");
 const ErrorResponse = require("../common/errorResponse");
+const { uploadFile } = require("../common/uploadFile");
 const crypto = require("crypto");
 const sendMail = require("../helpers/sendMail");
 
@@ -123,8 +124,6 @@ module.exports = {
         res.status(codeEnum.SUCCESS).json(user);
     }),
     updateDetails: asyncHandle(async (req, res, next) => {
-        console.log(req.file);
-        console.log(req.body);
         const allowFields = {
             name: req.body.name,
             photo: req.body.photo,
