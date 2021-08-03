@@ -49,6 +49,17 @@ const TourSchema = new mongoose.Schema(
             default: Date.now(),
             select: false
         },
+        ratingAverage: {
+            type: Number,
+            default: 4.5,
+            min: [1, "Rating must be about 1.0"],
+            max: [5, "Rating must be below 5.0"],
+            set: val => Math.round(val * 10) / 10
+        },
+        ratingQuality: {
+            type: Number,
+            default : 0
+        },
         startDates: [Date],
         guides: [
             {
@@ -82,4 +93,6 @@ TourSchema.virtual('reviews', {
 //     this.guides = await Promise.all(promiseGuides);
 //     next();
 // }) 
+TourSchema.index({ price: 1 });
+TourSchema.index({ slug: 1 });
 module.exports = mongoose.model("tours", TourSchema);

@@ -22,10 +22,7 @@ exports.updateDocument = Model => asyncHandle(async (req, res, next) => {
 
 exports.createDocument = Model => asyncHandle(async (req, res, next) => {
     const doc = await Model.create(req.body);
-    res.status(codeEnum.CREATED).json({
-            msg: msgEnum.ADD_SUCCESS,
-            data: doc
-    });
+
     sendResponse(doc, codeEnum.CREATED, msgEnum.ADD_SUCCESS, res);
 })
 
