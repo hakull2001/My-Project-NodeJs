@@ -6,6 +6,7 @@ const ErrorResponse = require("../common/errorResponse");
 const { uploadFile } = require("../common/uploadFile");
 const crypto = require("crypto");
 const sendMail = require("../helpers/sendMail");
+const { uploadFileS3 } = require("../middleware/s3");
 
 module.exports = {
     signUp: asyncHandle(async (req, res, next) => {
@@ -128,7 +129,10 @@ module.exports = {
             name: req.body.name,
             photo: req.body.photo,
         }
-        if (req.file) allowFields.photo = req.file.filename;
+        if (req.file) {
+            const avatar = await uploadFileS3(req.file);
+            allowFields.photo = `s3/${avatar.Key}`;
+        }
         for (let key in allowFields) {
             if (!allowFields[key]) {
                 delete allowFields[key];

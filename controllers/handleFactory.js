@@ -22,7 +22,6 @@ exports.updateDocument = Model => asyncHandle(async (req, res, next) => {
 
 exports.createDocument = Model => asyncHandle(async (req, res, next) => {
     const doc = await Model.create(req.body);
-
     sendResponse(doc, codeEnum.CREATED, msgEnum.ADD_SUCCESS, res);
 })
 
