@@ -2,7 +2,7 @@ const authController = require("../controllers/auth.controller");
 const authMiddleware = require("../middleware/auth");
 const { apiEnum } = require("../enum/api.enum");
 const router = require("express").Router();
-const upload = require("../common/uploadFile");
+const uploadController = require("../controllers/upload.controller");
 router
     .post(apiEnum.API_SIGNUP, authController.signUp)
     .post(apiEnum.API_LOGIN, authController.login)
@@ -32,7 +32,7 @@ router
 router
     .put(
         apiEnum.API_UPDATE_PROFILE,
-        upload.uploadUserPhoto,
+        uploadController.uploadImages,
         authController.updateDetails
 );
 router
